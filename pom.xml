@@ -11,6 +11,7 @@
     <groupId>com.eazybytes</groupId>
     <artifactId>loans</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
     <name>loans</name>
     <description>Microservice for Loans</description>
     <url/>
@@ -96,13 +97,23 @@
 
     <build>
         <plugins>
+<!--            <plugin>-->
+<!--                <groupId>org.springframework.boot</groupId>-->
+<!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--                <configuration>-->
+<!--                    <image>-->
+<!--                        <name>mamtakumawat/loans:v1</name>-->
+<!--                    </image>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
             <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>3.5.1</version>
                 <configuration>
-                    <image>
-                        <name>mamtakumawat/loans:v1</name>
-                    </image>
+                    <to>
+                        <image>mamtakumawat/loans:v2</image>
+                    </to>
                 </configuration>
             </plugin>
             <plugin>
